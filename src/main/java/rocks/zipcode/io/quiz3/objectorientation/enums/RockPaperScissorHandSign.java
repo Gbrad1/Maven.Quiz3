@@ -9,7 +9,7 @@ public enum RockPaperScissorHandSign {
     SCISSOR;
 
     public RockPaperScissorHandSign getWinner() {
-        if ();
+       return null;
     }
 
     public RockPaperScissorHandSign getLoser() {
