@@ -54,6 +54,7 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
+        SomeType[] a;
         return null;
     }
 }
