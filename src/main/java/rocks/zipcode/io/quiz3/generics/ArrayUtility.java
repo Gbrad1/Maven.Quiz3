@@ -1,5 +1,6 @@
 package rocks.zipcode.io.quiz3.generics;
 
+import java.lang.reflect.Array;
 import java.util.function.Function;
 
 /**
@@ -54,7 +55,20 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
-        SomeType[] a;
-        return null;
+        Integer count = 0;
+        @SuppressWarnings("unchecked")
+        SomeType[] a = (SomeType[]) Array.newInstance(array[0].getClass(), array.length);
+        for (int i = 0; i < array.length; i++) {
+            if (predicate.apply(array[i])) {
+                a[count++] = array[i];
+            }
+        }
+
+        @SuppressWarnings("unchecked")
+        SomeType[] b = (SomeType[]) Array.newInstance(array[0].getClass(), count);
+        for (int i = 0; i < b.length; i++) {
+            b[i] = a[i];
+        }
+        return b;
     }
 }

@@ -9,10 +9,20 @@ public enum RockPaperScissorHandSign {
     SCISSOR;
 
     public RockPaperScissorHandSign getWinner() {
-       return null;
+        if (this.equals(ROCK)) {
+            return PAPER;
+        } else if (this.equals(SCISSOR)) {
+            return ROCK;
+        }
+       return SCISSOR;
     }
 
     public RockPaperScissorHandSign getLoser() {
-        return null;
+        if (this.equals(ROCK)) {
+            return SCISSOR;
+        } else if (this.equals(SCISSOR)) {
+            return PAPER;
+        }
+        return ROCK;
     }
 }

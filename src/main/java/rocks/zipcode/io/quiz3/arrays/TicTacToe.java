@@ -52,13 +52,25 @@ public class TicTacToe {
         return false;
     }
 
+    public Boolean isDiagonal() {
+        if (board[0][0].equals(board[1][1]) && board[1][1].equals(board[2][2])) {
+            return true;
+        } else if (board[0][2].equals(board[1][1]) && board[1][1].equals(board[2][0])) {
+            return true;
+        }
+        return false;
+    }
+
     public String getWinner() {
         String winner = "";
         for (int i = 0; i < board.length; i++) {
             if (isRowHomogenous(i)) {
-
+                return board[i][0];
+            } else if (isColumnHomogeneous(i)) {
+                return board[0][i];
+            } else if (isDiagonal()) {
+                return board[1][1];
             }
-
         }
         return winner;
     }
