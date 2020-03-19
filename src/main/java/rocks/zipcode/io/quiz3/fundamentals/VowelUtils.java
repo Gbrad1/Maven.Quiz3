@@ -32,7 +32,7 @@ public class VowelUtils {
                 index = i;
                 break;
             } else {
-                index = -1;
+                index = - 1;
             }
 
         }

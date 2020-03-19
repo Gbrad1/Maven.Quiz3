@@ -15,6 +15,9 @@ public class PigLatinGenerator {
             } else if (index > 0) {
                 toReturn += rotateWord(array[i], index) + "ay";
                 toReturn += addSpaceOrNot(i, array.length);
+            } else if (index == - 1) {
+                toReturn += array[i] + "ay";
+                toReturn += addSpaceOrNot(i, array.length);
             } else
                 toReturn += array[i] + " ";
         }
