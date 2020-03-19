@@ -1,7 +1,9 @@
 package rocks.zipcode.io.quiz3.fundamentals;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author leon on 09/12/2018.
@@ -22,20 +24,11 @@ public class StringUtils {
     }
 
     public static Boolean isCharacterAtIndex(String baseString, Character characterToCheckFor, Integer indexOfString) {
-        for (int i = 0; i < baseString.length(); i++) {
-            if (baseString.charAt(i) == characterToCheckFor) {
-                if (i == indexOfString) {
-                    return true;
-                }
-            } else {
-                return false;
-            }
-        }
-        return null;
+        return (baseString.charAt(indexOfString) == characterToCheckFor);
     }
 
     public static String[] getAllSubStrings(String string) {
-        ArrayList<String> a = new ArrayList<>();
+        Set<String> a = new HashSet<>();
         for (int i = 0; i < string.length(); i++) {
             for (int j = i + 1; j <= string.length(); j++) {
                 a.add(string.substring(i, j));
@@ -43,9 +36,8 @@ public class StringUtils {
         }
 
         String[] toReturn = new String[a.size()];
-        for (int i = 0; i < a.size(); i++) {
-            toReturn[i] = a.get(i);
-        }
+        toReturn = a.toArray(toReturn);
+
         return toReturn;
     }
 
